@@ -5,7 +5,11 @@
 * Clone 
 * Run this: 
 ```
-meteor
+meteor 
+```
+* Then run this at another terminal:
+```
+meteor mongo
 ```
 * Go to:
 >
