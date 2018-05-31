@@ -1,0 +1,39 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Tarefas</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de Tarefas</h1>
+
+        <label class="hide-completed">
+            <input type="checkbox" ng-model="$ctrl.esconderConcluida"/>
+            Ocultar tarefas concluídas
+        </label>
+
+        <login-buttons></login-buttons>
+
+        <form class="new-task" ng-submit="$ctrl.adicionarTarefa($ctrl.novaTarefa)" ng-show="$ctrl.usuarioLogado">
+            <input ng-model="$ctrl.novaTarefa" type="text" name="text" placeholder="Digite para adicionar novas tarefas"/>
+        </form>
+
+    </header>
+
+    <ul>
+        <li ng-repeat="tarefa in $ctrl.tarefas" ng-class="{'checked': tarefa.concluida, 'private': tarefa.privada}">
+            <button class="delete" ng-click="$ctrl.removerTarefa(tarefa)">&times;</button>
+
+            <input type="checkbox" ng-checked="tarefa.concluida" ng-click="$ctrl.setConcluida(tarefa)" class="toggle-checked"/>
+
+            <span class="text">
+                <strong>{{tarefa.username}}</strong> - {{tarefa.descricao}}
+            </span>
+
+            <button class="toggle-private" ng-click="$ctrl.setPrivada(tarefa)" ng-show="tarefa.owner === $ctrl.usuarioLogado._id">
+                {{tarefa.privada == true ? "Privada" : "Pública"}}
+            </button>
+        </li>
+    </ul>
+</body>
+</html>
