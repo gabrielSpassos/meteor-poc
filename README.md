@@ -1,4 +1,4 @@
-# Meteor - Node - AngularJs - HMTL5
+# Meteor - AngularJs
 
 ### Usage
 
