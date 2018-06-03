@@ -1,9 +1,16 @@
 # Meteor - AngularJs
 
+This project create a list of tasks using meteor framework! 
+
+### First
+
+* Download [meteor](https://www.meteor.com/install)
+* _Obs: if you are using windows install first [choco](https://chocolatey.org/install)_
+
 ### Usage
 
-* Clone 
-* Run this: 
+* Clone this repo
+* Run this in terminal: 
 ```
 meteor 
 ```
